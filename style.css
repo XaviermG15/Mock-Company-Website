@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif ;
+    flex-wrap: wrap;
+    height:fit-content;
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+.banner{
+    width: 100%;
+    height: 150vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(FTFbanner2.jpeg);
+    background-size: cover;
+    background-position: center;
+
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+    display:flex;
+
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #ca0e0e;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+.navbar ul li:hover:after{
+    width: 100%;
+
+}
+.content{
+    margin-top: 250px;
+    width:100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    flex:1;
+    
+}
+.content h1{
+    font-family: 'Poppins',sans-serif;
+    font-size: 70px;
+    margin-top: 80px;
+}
+.content p{
+    font-family: 'Poppins',sans-serif;
+    margin: 20px auto;
+    font-weight: 600;
+    line-height: 25px;
+
+}
+.content p1{
+    margin: 20px auto;
+    font-weight: 600;
+    line-height: 20px;
+}
+button{
+    width:200px;
+    padding: 15px 0;
+    text-align:center;
+    margin:20 px 10 px;
+    border-radius:25px;
+    font-weight:bold;
+    border: 2px solid #ca0e0e;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+span{
+    background: #ca0e0e;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.3s ease ;
+}
+button:hover span{
+    width: 100%;
+
+}
+button:hover{
+    border: none;
+    color: #000
+    transformY(-10px)
+}
+
+/* Button Styles */
+.popup-btn,
+.custom-btn {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #ca0e0e;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.popup-btn:span,
+.custom-btn:span{
+    
+    background: #ca0e0e;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+ 
+}
+.popup-btn:hover span,
+.custom-btn:hover span {
+    width: 100%;
+}
+
+.popup-btn:hover,
+.custom-btn:hover {
+    border: none;
+    color: #000; /* Change text color on hover for better contrast */
+}
+
+/* Pop-Up Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+/* Pop-Up Box */
+.popup-box {
+    background: #1c1c1c;
+    color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.8);
+    position: relative;
+    transform: scale(1); /* Start with a smaller scale */
+    transition: transform 1s ease; /* Smooth zoom-in effect */
+}
+
+/* Pop-Up Image */
+.popup-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Active State for Pop-Up */
+.popup-overlay.active {
+    display: flex;
+    opacity: 1; /* Fully visible */
+}
+
+.popup-box.active {
+    transform: scale(1); /* Return to normal scale */
+}
+
+
+/* Title and Paragraph */
+.popup-box h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #ff6161;
+}
+
+.popup-box p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #e6e6e6;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    background-blend-mode: normal;
+    position:relative;
+    color: white;
+    font-size: 0.9rem;
+    bottom: 0;
+    width: 100%;
+
+  }
+  .contact-container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+  @media (max-width: 768px) {
+    .content h1, .section h2 {
+        font-size: 1.5rem;
+      }
+    
+      .content p, .section p {
+        font-size: 0.9rem;
+      }
+    }
+    

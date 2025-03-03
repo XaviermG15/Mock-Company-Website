@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>forktofit.com/locations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="navbar">
+            <img src="FTFlogo.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a> </li>
+                <li><a href="locations.html">Locations</a> </li>
+                <li><a href="menu.html">Menu</a> </li>
+                <li><a href="contacts.html">Contact Us</a> </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Our Locations</h1>
+            <p>Come Visit Us!</p>
+            
+
+            <!-- Pop-Up Trigger Button -->
+            <div class="button-container">
+                <button class="popup-btn" data-popup="popup1">NORTH 10TH<span></span></button>
+                <button class="popup-btn" data-popup="popup2"><span></span>NOLANA</button>
+                <button class="popup-btn" data-popup="popup3">RIDGE<span></span></button>
+                <button class="popup-btn" data-popup="popup4">TRES LAGOS<span></span></button>
+                <button class="popup-btn" data-popup="popup5">TRENTON<span></span></button>
+                <button class="popup-btn" data-popup="popup6">CONWAY<span></span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-Up -->
+    <div class="popup-overlay" id="popup1">
+        <div class="popup-box">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <img src="nolana2.jpg" alt="logo" class="popup-img">
+            <h2>Our Nolana Location!</h2>
+            <p>7001 N 10th St a2, McAllen, TX 78504 <br> (956) 627-3284</p>
+        </div>
+    </div>
+
+    <!-- Additional Buttons -->
+    <div class="popup-overlay" id="popup2">
+        <div class="popup-box">
+            <span class="close-btn">&times;</span>
+            <img src="nolana2.jpg" alt="Image 2" class="popup-img">
+            <h2>Our Nolana Location!</h2>
+            <p>2901 W Nolana Ave Ste 60, McAllen, TX 78501 <br>(956) 627-4042 </p>
+        </div>
+    </div>
+    <div class="popup-overlay" id="popup3">
+        <div class="popup-box">
+            <span class="close-btn">&times;</span>
+            <img src="nolana2.jpg" alt="Image 3" class="popup-img">
+            <h2>Our Ridge Location!</h2>
+            <p>1424 E Ridge Rd Ste 4, McAllen, TX 78504</p>
+        </div>
+    </div>
+    <div class="popup-overlay" id="popup4">
+        <div class="popup-box">
+            <span class="close-btn">&times;</span>
+            <img src="nolana2.jpg" alt="Image 4" class="popup-img">
+            <h2>Our Tres Lagos Location!</h2>
+            <p>4200 Tres Lagos Blvd, McAllen, TX 78504 <br>(956) 379-6064</p>
+        </div>
+    </div>
+    <div class="popup-overlay" id="popup5">
+        <div class="popup-box">
+            <span class="close-btn">&times;</span>
+            <img src="nolana2.jpg" alt="Image 4" class="popup-img">
+            <h2>Our Trenton Location!</h2>
+            <p>508 W Trenton Rd Ste C, Edinburg, TX 78539<br>(956) 513-1649</p>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Fork to Fit. All Rights Reserved.</p>
+   </footer>
+    <script>
+
+        // JavaScript for Multiple Pop-Ups
+        document.querySelectorAll('.popup-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const popupId = button.getAttribute('data-popup');
+                const popup = document.getElementById(popupId);
+                if (popup) {
+                    popup.classList.add('active');
+                }
+            });
+        });
+
+        // Close buttons for pop-ups
+        document.querySelectorAll('.close-btn').forEach(close => {
+            close.addEventListener('click', () => {
+                close.closest('.popup-overlay').classList.remove('active');
+            });
+        });
+
+        // Close pop-ups when clicking outside of the pop-up box
+        window.addEventListener('click', (e) => {
+            document.querySelectorAll('.popup-overlay').forEach(popup => {
+                if (e.target === popup) {
+                    popup.classList.remove('active');
+                }
+            });
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
